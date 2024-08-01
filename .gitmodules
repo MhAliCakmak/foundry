@@ -1,3 +1,6 @@
 [submodule "easy_math/lib/forge-std"]
 	path = easy_math/lib/forge-std
 	url = https://github.com/foundry-rs/forge-std
+[submodule "owner/lib/forge-std"]
+	path = owner/lib/forge-std
+	url = https://github.com/foundry-rs/forge-std

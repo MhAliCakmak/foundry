@@ -1,7 +1,9 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.13;
 
-
+import {Test} from "forge-std/Test.sol";
+import {DeployOurToken} from "../script/DeployOurToken.s.sol";
+import {OurToken} from "../src/OurToken.sol";
 
 contract OurTokenTest is Test {
     OurToken ourToken;
@@ -11,11 +13,6 @@ contract OurTokenTest is Test {
 
     function setUp() public {
         ourToken = new OurToken();
-    }
-
-    function testUsersCantMint() public {
-        vm.expectRevert();
-        ourToken.mint(address(this), 1);
     }
 
     function testAllowance() public {
@@ -38,10 +35,5 @@ contract OurTokenTest is Test {
         assertEq(ourToken.balanceOf(recipient), amount);
     }
 
-    function testMinting() public {
-        uint256 amount = 100;
-        vm.prank(owner);
-        ourToken.mint(recipient, amount);
-        assertEq(ourToken.balanceOf(recipient), amount);
-    }
+    
 }

@@ -14,10 +14,10 @@ contract Dogies is ERC721, Ownable {
     {}
 
     function _baseURI() internal pure override returns (string memory) {
-        return "test";
+        return "https://testnet.blastscan.io/address/0x7ac38555752f7c29b6c2c2585a15fda93e952784";
     }
 
-    function safeMint(address to) public onlyOwner {
+    function safeMint(address to) public {
         uint256 tokenId = _nextTokenId++;
         _safeMint(to, tokenId);
     }
